@@ -1,0 +1,50 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  text-align: center;
+  padding: 20px;
+}
+
+select, button {
+  font-size: 16px;
+  margin: 10px;
+  padding: 8px 12px;
+}
+
+#wheel-container {
+  position: relative;
+  display: inline-block;
+  margin: 20px 0;
+}
+
+#pointer {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 30px solid red;
+  z-index: 10;
+}
+
+#spin-btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#spin-btn:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+#result {
+  margin-top: 20px;
+  font-size: 24px;
+  color: #333;
+}
