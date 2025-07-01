@@ -90,22 +90,30 @@ button:disabled {
 
 #wheel-canvas {
   border-radius: 50%;
-  box-shadow: 0 4px 24px rgba(37,99,235,0.10);
-  background: #f1f5f9;
+  box-shadow: 0 4px 32px 0 rgba(34,211,238,0.15), 0 0 0 8px #a5b4fc33;
+  background: conic-gradient(
+    #fbbf24 0% 16%,
+    #34d399 16% 32%,
+    #60a5fa 32% 48%,
+    #f472b6 48% 64%,
+    #f87171 64% 80%,
+    #a78bfa 80% 100%
+  );
+  border: 6px solid #2563eb;
   max-width: 100%;
   height: auto;
 }
 
 #pointer {
   position: absolute;
-  top: -36px;
+  bottom: -36px;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) rotate(180deg);
   width: 0;
   height: 0;
   border-left: 22px solid transparent;
   border-right: 22px solid transparent;
-  border-bottom: 36px solid #22d3ee;
+  border-top: 36px solid #22d3ee;
   filter: drop-shadow(0 2px 4px rgba(37,99,235,0.12));
   z-index: 10;
 }
