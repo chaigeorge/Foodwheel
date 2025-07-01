@@ -1,5 +1,24 @@
 let theWheel;
 
+const resultCard = document.getElementById("result-card");
+const resultText = document.getElementById("result");
+
+function showResult(text) {
+  resultText.textContent = text;
+  resultCard.classList.remove("hidden");
+  // Fade in effect
+  resultCard.style.opacity = 0;
+  setTimeout(() => {
+    resultCard.style.opacity = 1;
+  }, 10);
+  // Confetti
+  confetti({
+    particleCount: 100,
+    spread: 70,
+    origin: { y: 0.6 }
+  });
+}
+
 document.getElementById("load-btn").addEventListener("click", () => {
   const cafeteria = document.getElementById("cafeteria-select").value;
   if (!cafeteria) {
@@ -32,12 +51,13 @@ document.getElementById("load-btn").addEventListener("click", () => {
           duration: 5,
           spins: 8,
           callbackFinished: (segment) => {
-            document.getElementById("result").textContent = `You should eat: 🍽️ ${segment.text}`;
+            showResult(`You should eat: 🍽️ ${segment.text}`);
           }
         }
       });
 
       document.getElementById("spin-btn").disabled = false;
+      resultCard.classList.add("hidden");
     }
   });
 });
@@ -47,11 +67,3 @@ document.getElementById("spin-btn").addEventListener("click", () => {
     theWheel.startAnimation();
   }
 });
-callbackFinished: (segment) => {
-  document.getElementById("result").textContent = `You should eat: 🍽️ ${segment.text}`;
-  confetti({
-    particleCount: 100,
-    spread: 70,
-    origin: { y: 0.6 }
-  });
-}

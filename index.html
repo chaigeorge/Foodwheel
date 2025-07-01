@@ -3,6 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <title>Cafeteria Spinner</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 
   <!-- Libraries -->
@@ -12,25 +16,25 @@
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </head>
 <body>
-  <h1>🍽️ Cafeteria Spinner</h1>
-
-  <label for="cafeteria-select">Choose Cafeteria:</label>
-  <select id="cafeteria-select">
-    <option value="">-- Select Cafeteria --</option>
-    <option value="sample">Sample Cafeteria</option>
-  </select>
-
-  <button id="load-btn">Load Food Items</button>
-
-  <div id="wheel-container">
-    <div id="pointer"></div>
-    <canvas id="wheel-canvas" width="500" height="500"></canvas>
+  <div class="container">
+    <h1>🍽️ Cafeteria Spinner</h1>
+    <form class="controls" onsubmit="return false;">
+      <label for="cafeteria-select">Choose Cafeteria:</label>
+      <select id="cafeteria-select">
+        <option value="">-- Select Cafeteria --</option>
+        <option value="sample">Sample Cafeteria</option>
+      </select>
+      <button id="load-btn" type="button">Load Food Items</button>
+    </form>
+    <div id="wheel-container">
+      <div id="pointer"></div>
+      <canvas id="wheel-canvas" width="500" height="500"></canvas>
+    </div>
+    <button id="spin-btn" disabled>Spin the Plate! 🍛</button>
+    <div id="result-card" class="hidden">
+      <h2 id="result"></h2>
+    </div>
   </div>
-
-  <button id="spin-btn" disabled>Spin the Plate! 🍛</button>
-
-  <h2 id="result"></h2>
-
   <script src="script.js"></script>
 </body>
 </html>
