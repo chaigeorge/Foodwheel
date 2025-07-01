@@ -106,14 +106,14 @@ button:disabled {
 
 #pointer {
   position: absolute;
-  bottom: -36px;
+  top: -36px;
   left: 50%;
-  transform: translateX(-50%) rotate(180deg);
+  transform: translateX(-50%);
   width: 0;
   height: 0;
   border-left: 22px solid transparent;
   border-right: 22px solid transparent;
-  border-top: 36px solid #22d3ee;
+  border-bottom: 36px solid #22d3ee;
   filter: drop-shadow(0 2px 4px rgba(37,99,235,0.12));
   z-index: 10;
 }
